@@ -1,6 +1,6 @@
 {
   "name": "pm2-env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "show process environment variables",
   "main": "index.js",
   "bin": {
