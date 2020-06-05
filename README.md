@@ -7,8 +7,11 @@
 
 ## 使用
 * pm2-env param1 [param2]
->>param1: 要搜索的进程名称，必填
->>param2: 搜索进程环境变量再次过滤key, 该参数未可选
+    + param1: 要搜索的进程名称，必填
+    + param2: 搜索进程环境变量再次过滤key, 该参数为可选
+
+## 运行结果
+![效果图](http://images.yantinglife.com/pm2-env-res.png)
 
 ## 关于作者
 ```javascript
