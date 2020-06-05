@@ -1,0 +1,21 @@
+{
+  "name": "pm2-env",
+  "version": "1.0.0",
+  "description": "show process environment variables",
+  "main": "index.js",
+  "bin": {
+    "pm2-env": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "environ",
+    "pm2"
+  ],
+  "author": "binli",
+  "license": "ISC",
+  "dependencies": {
+    "shelljs": "^0.8.4"
+  }
+}
