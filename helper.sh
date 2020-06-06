@@ -1,13 +1,13 @@
 #!/bin/bash
-if [ ! -n "$1" ]; then
+if [[ ! -n "$1" ]]; then
   echo "please input seach key"
   exit 0
 else
-  echo "begin search $1..."
+  echo "begin search $1, $2..."
 fi
 line=`ps -ef | grep "$1" | grep -v "helper.sh" | grep -v "cgroup" | grep -v "grep" | grep -v "color" | grep -v "pts/" | wc -l`
 
-if [ $line -ge 1 ]; then
+if [[ $line -ge 1 ]]; then
   echo "total process is $line"
 else
   echo "not exist"
@@ -17,7 +17,7 @@ PIDS=`ps -ef | grep "$1" | grep -v "helper.sh" | grep -v "cgroup" | grep -v "gre
 for pid in $PIDS
 do
   echo -e "\n======begin process id:$pid========"
-  if [ ! -n "$2" ]; then
+  if [[ ! -n "$2" ]]; then
     cat /proc/$pid/environ | tr '\0' '\n'
   else
     cat /proc/$pid/environ | tr '\0' '\n' | grep $2
@@ -25,4 +25,10 @@ do
   echo -e "======end process id:$pid========\n"
 done
 
-
+t=`uname -a`
+if [[ $t =~ 'Linux' ]]; then
+  exit 0
+else
+  echo 'use Ctr+c close window'
+  read
+fi
